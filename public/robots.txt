@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# TODO: substituir pelo domínio real
+Sitemap: https://www.caragi.com.br/sitemap.xml

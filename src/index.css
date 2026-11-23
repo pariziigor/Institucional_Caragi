@@ -1,0 +1,88 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Valores padrão das cores. São sobrescritos em runtime a partir de site.config.js (ver main.jsx). */
+:root {
+  --c-primary: 43 40 37;
+  --c-secondary: 89 97 63;
+  --c-accent: 169 83 31;
+  --c-accent-light: 224 160 116;
+  --c-sand: 246 242 236;
+  --c-paper: 236 229 218;
+  --c-ink: 31 29 27;
+  --c-muted: 94 88 81;
+  --c-dark: 28 26 24;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+  }
+  body {
+    @apply bg-sand font-sans text-ink antialiased;
+  }
+  h1, h2, h3, h4 {
+    @apply font-display font-semibold text-primary;
+  }
+  :focus-visible {
+    @apply outline outline-2 outline-offset-2 outline-accent;
+  }
+  .on-dark :focus-visible {
+    @apply outline-accent-light;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer components {
+  .container-page {
+    @apply mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-10;
+  }
+  .section {
+    @apply py-16 md:py-24;
+  }
+  /* Seções escuras: título e texto claros */
+  .on-dark {
+    @apply bg-primary text-sand/85;
+  }
+  .on-dark h1, .on-dark h2, .on-dark h3 {
+    @apply text-sand;
+  }
+  .eyebrow {
+    @apply mb-3 inline-block text-sm font-bold uppercase tracking-[0.16em] text-accent;
+  }
+  .on-dark .eyebrow {
+    @apply text-accent-light;
+  }
+  .card {
+    @apply rounded-xl2 bg-paper/60 p-6 transition duration-300 hover:-translate-y-1 hover:shadow-lift;
+  }
+  .field {
+    @apply w-full rounded-xl border border-primary/25 bg-white px-4 py-3 text-ink placeholder:text-muted/70 transition duration-200 focus:border-accent;
+  }
+  .field-error {
+    @apply border-red-700;
+  }
+}
+
+/* Animação de entrada ao rolar (ativada pelo componente Reveal) */
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; }
+}
