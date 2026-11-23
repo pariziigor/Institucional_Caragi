@@ -140,13 +140,9 @@ export default function ContactForm() {
       )}
 
       <div className="flex flex-col gap-3 sm:flex-row">
-        <button
-          type="submit"
-          disabled={status === 'loading'}
-          className="inline-flex items-center justify-center gap-2 bg-accent px-7 py-4 text-sm font-bold uppercase tracking-[0.1em] text-white transition duration-200 hover:bg-primary disabled:cursor-not-allowed disabled:opacity-70"
-        >
-          {status === 'loading' ? (<><Loader2 size={18} className="animate-spin" aria-hidden="true" /> Enviando</>) : (<><Send size={18} aria-hidden="true" /> Enviar mensagem</>)}
-        </button>
+        <Button type="submit" disabled={status === 'loading'} className="disabled:cursor-not-allowed disabled:opacity-70">
+          {status === 'loading' ? (<><Loader2 size={18} className="animate-spin" aria-hidden="true" /> Enviando</>) : (<><Send size={18} aria-hidden="true" className="transition-transform duration-300 group-hover:translate-x-1" /> Enviar mensagem</>)}
+        </Button>
         <Button href={whatsappLink(siteConfig.whatsappMessages.default)} variant="secondary">
           <MessageCircle size={18} aria-hidden="true" /> Falar pelo WhatsApp
         </Button>
