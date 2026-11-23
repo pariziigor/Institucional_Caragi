@@ -1,16 +1,13 @@
 import {
-  Hammer, Home, Map, Key, Handshake, Eye, MapPin, ShieldCheck, Route, Ruler, Clock, Scale,
-  MessageCircle, Search, FileText, KeyRound, Phone, Mail, Clock3, Instagram, Facebook, Linkedin,
-  Warehouse, Building2, Network,
+  Home, MapPin, ShieldCheck, Ruler, Clock, MessageCircle, FileText, Phone, Mail, Warehouse, Building2, Network,
+  Cpu, Layers, Landmark, Maximize2, Zap, Truck, Check,
 } from 'lucide-react';
 
 // Registro de ícones usados nos dados (src/data). Para usar um novo, importe e adicione aqui.
 const icons = {
-  hammer: Hammer, home: Home, map: Map, key: Key, handshake: Handshake, eye: Eye, mapPin: MapPin,
-  shield: ShieldCheck, route: Route, ruler: Ruler, clock: Clock, scale: Scale,
-  messageCircle: MessageCircle, search: Search, fileText: FileText, keyRound: KeyRound,
-  phone: Phone, mail: Mail, hours: Clock3, instagram: Instagram, facebook: Facebook, linkedin: Linkedin,
-  warehouse: Warehouse, building: Building2, network: Network,
+  home: Home, mapPin: MapPin, shield: ShieldCheck, ruler: Ruler, clock: Clock, messageCircle: MessageCircle,
+  fileText: FileText, phone: Phone, mail: Mail, warehouse: Warehouse, building: Building2, network: Network,
+  cpu: Cpu, layers: Layers, landmark: Landmark, maximize: Maximize2, zap: Zap, truck: Truck, check: Check,
 };
 
 export default function Icon({ name, size = 24, ...props }) {

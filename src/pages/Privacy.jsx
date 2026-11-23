@@ -14,7 +14,7 @@ export default function Privacy() {
           <p>Esta política explica como a {siteConfig.legalName} (CNPJ {siteConfig.cnpj}) trata os dados pessoais de quem usa este site, conforme a Lei Geral de Proteção de Dados (Lei nº 13.709/2018).</p>
           <div>
             <h2 className="mb-2 text-h3">Quais dados coletamos</h2>
-            <p>Coletamos apenas os dados que você informa no formulário de contato (nome, telefone, e-mail, assunto e mensagem) e dados técnicos de navegação, como páginas acessadas.</p>
+            <p>Coletamos apenas os dados que você informa no formulário de contato (nome, empresa, e-mail, telefone, tipo de interesse e mensagem) e dados técnicos de navegação, como páginas acessadas.</p>
           </div>
           <div>
             <h2 className="mb-2 text-h3">Para que usamos</h2>

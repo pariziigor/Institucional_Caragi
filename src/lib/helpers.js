@@ -4,6 +4,9 @@ import siteConfig from '../config/site.config';
 export const whatsappLink = (message = siteConfig.whatsappMessages.default) =>
   `https://wa.me/${siteConfig.whatsapp}?text=${encodeURIComponent(message)}`;
 
+/** Link para uma seção da página inicial (funciona em qualquer página e com o base do GitHub Pages). */
+export const anchor = (id) => `${import.meta.env.BASE_URL}#${id}`;
+
 /** Link tel: apenas com dígitos. */
 export const telLink = (phone = siteConfig.phone) => `tel:+55${phone.replace(/\D/g, '')}`;
 

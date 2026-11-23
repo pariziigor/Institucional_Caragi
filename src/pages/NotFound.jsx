@@ -1,5 +1,6 @@
 import Seo from '../components/Seo';
 import Button from '../components/Button';
+import { anchor } from '../lib/helpers';
 
 export default function NotFound() {
   return (
@@ -12,7 +13,7 @@ export default function NotFound() {
           <p className="mx-auto mt-4 max-w-md text-lead">O endereço pode ter mudado ou não existe mais. Volte ao início ou fale com a gente.</p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
             <Button to="/">Voltar ao início</Button>
-            <Button to="/contato" variant="outlineLight">Ir para contato</Button>
+            <Button href={anchor('contato')} variant="outlineLight">Ir para contato</Button>
           </div>
         </div>
       </section>

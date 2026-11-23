@@ -9,18 +9,13 @@ import JsonLd from './components/JsonLd';
 import Home from './pages/Home';
 
 // Páginas secundárias carregadas sob demanda (JS inicial menor)
-const About = lazy(() => import('./pages/About'));
-const Services = lazy(() => import('./pages/Services'));
-const Projects = lazy(() => import('./pages/Projects'));
-const ProjectDetail = lazy(() => import('./pages/ProjectDetail'));
-const Contact = lazy(() => import('./pages/Contact'));
 const Privacy = lazy(() => import('./pages/Privacy'));
 const NotFound = lazy(() => import('./pages/NotFound'));
 
 export default function App() {
   return (
     <>
-      <a href="#conteudo" className="sr-only z-[70] rounded bg-accent px-4 py-2 text-white focus:not-sr-only focus:fixed focus:left-3 focus:top-3">
+      <a href="#conteudo" className="sr-only z-[70] bg-accent px-4 py-2 text-white focus:not-sr-only focus:fixed focus:left-3 focus:top-3">
         Pular para o conteúdo
       </a>
       <ScrollToTop />
@@ -30,11 +25,6 @@ export default function App() {
         <Suspense fallback={<div className="min-h-screen" aria-busy="true" />}>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/a-caragi" element={<About />} />
-            <Route path="/areas-de-atuacao" element={<Services />} />
-            <Route path="/projetos" element={<Projects />} />
-            <Route path="/projetos/:slug" element={<ProjectDetail />} />
-            <Route path="/contato" element={<Contact />} />
             <Route path="/politica-de-privacidade" element={<Privacy />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
